@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4lvywgujccxo"]
+
+[ext_resource type="Script" uid="uid://y8ftt6632ffx" path="res://scenes/player/player.gd" id="1_8afob"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_x7p2l"]
+height = 1.8
+
+[node name="Player" type="Node3D"]
+script = ExtResource("1_8afob")
+left_lane_pos = Vector3(-2, 0, 0)
+right_lane_pos = Vector3(2, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+mesh = SubResource("CapsuleMesh_x7p2l")

@@ -1,0 +1,78 @@
+[gd_scene load_steps=6 format=3 uid="uid://bk1132d4v2l4v"]
+
+[ext_resource type="Script" uid="uid://fvd2j4sidler" path="res://scenes/path_maker/path_maker.gd" id="1_lnv4v"]
+[ext_resource type="PackedScene" uid="uid://dl748eni510co" path="res://scenes/paths/debug/test_path_1.tscn" id="2_kqvqo"]
+[ext_resource type="PackedScene" uid="uid://dc11a7y3u7y5" path="res://scenes/paths/debug/test_path_2.tscn" id="3_kp1j7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kp1j7"]
+albedo_color = Color(0.380392, 0.729412, 0.192157, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wlsvr"]
+albedo_color = Color(0.427035, 0.336853, 0.240104, 1)
+
+[node name="PathMaker" type="Node"]
+script = ExtResource("1_lnv4v")
+
+[node name="Ground" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)
+size = Vector3(10, 1, 50)
+material = SubResource("StandardMaterial3D_kp1j7")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+operation = 2
+size = Vector3(3, 1, 50)
+material = SubResource("StandardMaterial3D_wlsvr")
+
+[node name="Active" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="TestPath9" parent="Active" instance=ExtResource("2_kqvqo")]
+active = true
+
+[node name="TestPath12" parent="Active" instance=ExtResource("2_kqvqo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -30)
+active = true
+
+[node name="TestPath10" parent="Active" instance=ExtResource("2_kqvqo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+active = true
+
+[node name="TestPath11" parent="Active" instance=ExtResource("3_kp1j7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)
+active = true
+
+[node name="Inactive" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="TestPath" parent="Inactive" instance=ExtResource("2_kqvqo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, -30)
+visible = false
+
+[node name="TestPath4" parent="Inactive" instance=ExtResource("2_kqvqo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, -30)
+visible = false
+
+[node name="TestPath7" parent="Inactive" instance=ExtResource("2_kqvqo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, -30)
+visible = false
+
+[node name="TestPath8" parent="Inactive" instance=ExtResource("2_kqvqo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, -30)
+visible = false
+
+[node name="TestPath2" parent="Inactive" instance=ExtResource("3_kp1j7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, -30)
+visible = false
+
+[node name="TestPath3" parent="Inactive" instance=ExtResource("3_kp1j7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, -30)
+visible = false
+
+[node name="TestPath5" parent="Inactive" instance=ExtResource("3_kp1j7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, -30)
+visible = false
+
+[node name="TestPath6" parent="Inactive" instance=ExtResource("3_kp1j7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, -30)
+visible = false

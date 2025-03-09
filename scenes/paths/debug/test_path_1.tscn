@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://dl748eni510co"]
+
+[ext_resource type="Script" uid="uid://11rpv7lfhryp" path="res://scenes/paths/path_mover.gd" id="1_d024u"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d5r5m"]
+transparency = 1
+albedo_color = Color(0.278431, 0.533333, 0.211765, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hry2a"]
+albedo_color = Color(0.331859, 0.268218, 0.138905, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d024u"]
+albedo_color = Color(0.200321, 0.284273, 0.152917, 1)
+
+[node name="TestPath" type="CSGBox3D"]
+size = Vector3(10, 1, 10)
+material = SubResource("StandardMaterial3D_d5r5m")
+script = ExtResource("1_d024u")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, -2)
+radius = 0.25
+height = 4.0
+material = SubResource("StandardMaterial3D_hry2a")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+radius = 1.0
+material = SubResource("StandardMaterial3D_d024u")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2, 2)
+radius = 0.25
+height = 4.0
+material = SubResource("StandardMaterial3D_hry2a")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="CSGCylinder3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+radius = 1.0
+material = SubResource("StandardMaterial3D_d024u")
